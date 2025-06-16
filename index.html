@@ -1,66 +1,111 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>BayuMinecraft Addons</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bayu Minecraft</title>
   <style>
     body {
-      font-family: sans-serif;
-      background-color: #181a1b;
-      color: #f0f0f0;
       margin: 0;
-      padding: 20px;
-    }
-    .addon-box {
-      background: #242628;
-      border-radius: 12px;
-      padding: 15px;
-      margin-bottom: 20px;
-      box-shadow: 0 0 10px #00ff66;
-    }
-    .addon-img {
-      width: 100%;
-      max-height: 200px;
-      object-fit: cover;
-      border-radius: 10px;
-      margin-bottom: 10px;
-    }
-    .addon-title {
-      font-size: 20px;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-    .btn-download {
-      background-color: #007bff;
+      font-family: 'Segoe UI', sans-serif;
+      background: #121212;
       color: white;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      display: inline-block;
+      text-align: center;
     }
-    .btn-download:hover {
-      background-color: #0056b3;
+    .container {
+      padding: 30px 15px;
+    }
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      box-shadow: 0 0 20px orange;
+      margin-bottom: 10px;
+    }
+    h1 {
+      font-size: 36px;
+      margin: 10px 0 5px;
+    }
+    .subtitle {
+      color: #facc15;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    .socials img {
+      width: 40px;
+      margin: 0 10px;
+      border-radius: 8px;
+    }
+    .section {
+      background: linear-gradient(135deg, #facc15, #fb923c);
+      border-radius: 15px;
+      padding: 20px;
+      margin-top: 30px;
+      box-shadow: 0 0 25px rgba(255, 204, 0, 0.4);
+    }
+    .section h2 {
+      margin: 0 0 20px;
+      font-size: 22px;
+      color: #000;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    .item {
+      background: #1e1e1e;
+      padding: 12px;
+      border-radius: 10px;
+      font-weight: bold;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: 0.3s;
+    }
+    .item:hover {
+      background: #2a2a2a;
+    }
+    .download {
+      margin-top: 20px;
+      background: #0ea5e9;
+      color: white;
+      font-weight: bold;
+      border-radius: 8px;
+      padding: 10px 16px;
+      display: inline-block;
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
+  <div class="container">
+    <img src="https://i.imgur.com/1X6VZbH.png" class="profile-img" alt="Bayu Logo" />
+    <h1>BAYU</h1>
+    <div class="subtitle">FREE</div>
 
-  <h1>📦 Addon Minecraft by Bayu</h1>
-  <p>Download kumpulan addon keren & siap pakai di Minecraft PE/Bedrock!</p>
+    <div class="socials">
+      <a href="#"><img src="https://img.icons8.com/color/48/youtube-play.png"/></a>
+      <a href="#"><img src="https://img.icons8.com/color/48/tiktok--v1.png"/></a>
+      <a href="#"><img src="https://img.icons8.com/color/48/discord-logo.png"/></a>
+    </div>
 
-  <div class="addon-box">
-    <img class="addon-img" src="https://example.com/gambar-addon.jpg" alt="Ambient Sounds V5" />
-    <div class="addon-title">Ambient Sounds V5</div>
-    <a class="btn-download" href="https://example.com/download-addon.mcaddon" target="_blank">⬇️ Download</a>
+    <div class="section">
+      <h2>🎮 MINECRAFT 🎮</h2>
+      <div class="grid">
+        <div class="item">🗺️ Maps</div>
+        <div class="item">🧩 Addons</div>
+        <div class="item">✨ Shaders</div>
+        <div class="item">💻 Clients</div>
+        <div class="item">🌅 Textures</div>
+        <div class="item">👕 Skins</div>
+        <div class="item">🐉 ModPacks</div>
+        <div class="item">🛒 Marketplace</div>
+      </div>
+      <a class="download" href="#">⬇️ Download Minecraft ⬇️</a>
+    </div>
   </div>
-
-  <div class="addon-box">
-    <img class="addon-img" src="https://example.com/gambar2.jpg" alt="Fast & Furious Pack" />
-    <div class="addon-title">Fast and Furious Vehicle Pack</div>
-    <a class="btn-download" href="https://example.com/fast-car-pack.mcaddon" target="_blank">⬇️ Download</a>
-  </div>
-
 </body>
 </html>
