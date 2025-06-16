@@ -1,113 +1,151 @@
-      <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Bayu Addons</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BayuMC Hub</title>
   <style>
     body {
-      background-color: #006666;
-      color: #000;
-      font-family: sans-serif;
-      text-align: center;
       margin: 0;
-      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f4f8;
+      color: #222;
+      text-align: center;
+    }
+    .hidden {
+      display: none;
     }
     .profile-img {
       width: 120px;
       height: 120px;
       border-radius: 50%;
-      margin: 30px auto 10px;
-      display: block;
-      background-color: orange;
-      object-fit: cover;
+      background: orange;
+      margin: 30px auto 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
     }
-    .tiktok-icon {
-      width: 50px;
-      margin-bottom: 20px;
-    }
-    .search-box {
-      margin: 20px auto;
-      padding: 10px;
-      font-size: 16px;
-      border-radius: 10px;
-      border: none;
+    .button {
+      background: #a5f3fc;
+      border: 2px solid #3b82f6;
+      color: #111;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 12px 24px;
+      margin: 10px auto;
       width: 80%;
       max-width: 300px;
-    }
-    .addon-card {
-      background: linear-gradient(to bottom, #66ccff, #3399ff);
       border-radius: 20px;
-      margin: 20px auto;
+      cursor: pointer;
+      display: block;
+      transition: 0.3s;
+    }
+    .button:hover {
+      background: #7dd3fc;
+    }
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
       padding: 20px;
+      margin: 20px auto;
+      width: 90%;
       max-width: 400px;
-      color: black;
-    }
-    .addon-title {
-      font-size: 20px;
-      font-weight: bold;
-    }
-    .addon-link {
-      display: inline-block;
-      margin: 10px 0;
-      padding: 10px 16px;
-      background-color: #2222ff;
-      color: white;
-      text-decoration: none;
-      border-radius: 12px;
     }
     .addon-img {
       width: 100%;
       border-radius: 10px;
       margin-top: 10px;
     }
+    .search-box {
+      padding: 10px;
+      width: 80%;
+      max-width: 300px;
+      font-size: 16px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      margin: 20px auto;
+      display: block;
+    }
   </style>
 </head>
 <body>
+  <!-- Halaman Utama -->
+  <div id="home">
+    <div class="profile-img"></div>
+    <a href="#" class="button">📢 Saluran WhatsApp</a>
 
-  <!-- Foto Profil -->
-  <img src="https://yourdomain.com/foto.png" class="profile-img" alt="Foto Profil">
-
-  <!-- Logo TikTok -->
-  <a href="https://tiktok.com/@yourusername" target="_blank">
-    <img src="https://img.icons8.com/color/48/tiktok--v1.png" class="tiktok-icon" alt="TikTok" />
-  </a>
-
-  <!-- Fitur Pencarian -->
-  <input type="text" id="searchInput" class="search-box" placeholder="Cari addon...">
-
-  <!-- Daftar Addon -->
-  <div id="addonList">
-
-    <!-- Addon 1 -->
-    <div class="addon-card">
-      <div class="addon-title">Villager Soldier</div>
-      <a href="https://example.com/download.mcaddon" class="addon-link" target="_blank">Download</a>
-      <img src="https://i.imgur.com/5OKK9ai.jpg" class="addon-img" alt="Villager Soldier">
+    <div class="card">
+      <button class="button" onclick="showPage('addon')">🧩 Addon</button>
+      <button class="button" onclick="showPage('texture')">🎨 Texture</button>
+      <button class="button" onclick="showPage('map')">🗺️ Map</button>
+      <button class="button" onclick="showPage('skin')">👕 Skin</button>
     </div>
 
-    <!-- Tambahkan addon berikutnya di bawah sini -->
-    <!-- Contoh:
-    <div class="addon-card">
-      <div class="addon-title">Nama Addon</div>
-      <a href="https://..." class="addon-link" target="_blank">Download</a>
-      <img src="https://..." class="addon-img" alt="...">
-    </div>
-    -->
-
+    <a href="#" class="button">💰 Link Donasi</a>
   </div>
 
-  <!-- Script Filter -->
-  <script>
-    const searchInput = document.getElementById("searchInput");
-    searchInput.addEventListener("keyup", function () {
-      const filter = searchInput.value.toLowerCase();
-      const addons = document.querySelectorAll(".addon-card");
-      addons.forEach(card => {
-        const title = card.querySelector(".addon-title").textContent.toLowerCase();
-        card.style.display = title.includes(filter) ? "block" : "none";
-      });
-    });
-  </script>
+  <!-- Halaman Addon -->
+  <div id="addon" class="hidden">
+    <div class="profile-img"></div>
+    <button class="button" onclick="goBack()">🔙 Kembali</button>
+    <input type="text" id="search-addon" class="search-box" placeholder="Cari addon...">
+    <div class="card">
+      <strong>Villager Soldier</strong><br>
+      <a href="#" class="button">🔽 Link Download</a>
+      <img src="https://i.imgur.com/Jtxj6ZP.jpeg" class="addon-img" alt="Addon">
+    </div>
+    <!-- Tambah list addon lain di sini -->
+  </div>
 
+  <!-- Halaman Texture -->
+  <div id="texture" class="hidden">
+    <div class="profile-img"></div>
+    <button class="button" onclick="goBack()">🔙 Kembali</button>
+    <input type="text" class="search-box" placeholder="Cari texture...">
+    <div class="card">
+      <strong>Texture Keren</strong><br>
+      <a href="#" class="button">🔽 Link Download</a>
+      <img src="https://i.imgur.com/gSNYfIm.jpeg" class="addon-img" alt="Texture">
+    </div>
+  </div>
+
+  <!-- Halaman Map -->
+  <div id="map" class="hidden">
+    <div class="profile-img"></div>
+    <button class="button" onclick="goBack()">🔙 Kembali</button>
+    <input type="text" class="search-box" placeholder="Cari map...">
+    <div class="card">
+      <strong>SkyBlock Map</strong><br>
+      <a href="#" class="button">🔽 Link Download</a>
+      <img src="https://i.imgur.com/KVJtJkA.jpeg" class="addon-img" alt="Map">
+    </div>
+  </div>
+
+  <!-- Halaman Skin -->
+  <div id="skin" class="hidden">
+    <div class="profile-img"></div>
+    <button class="button" onclick="goBack()">🔙 Kembali</button>
+    <input type="text" class="search-box" placeholder="Cari skin...">
+    <div class="card">
+      <strong>Anime Skin</strong><br>
+      <a href="#" class="button">🔽 Link Download</a>
+      <img src="https://i.imgur.com/UrxMeES.jpeg" class="addon-img" alt="Skin">
+    </div>
+  </div>
+
+  <script>
+    function showPage(id) {
+      document.getElementById('home').classList.add('hidden');
+      ['addon','texture','map','skin'].forEach(page => {
+        document.getElementById(page).classList.add('hidden');
+      });
+      document.getElementById(id).classList.remove('hidden');
+    }
+    function goBack() {
+      ['addon','texture','map','skin'].forEach(page => {
+        document.getElementById(page).classList.add('hidden');
+      });
+      document.getElementById('home').classList.remove('hidden');
+    }
+  </script>
 </body>
 </html>
