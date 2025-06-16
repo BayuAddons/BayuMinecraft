@@ -1,104 +1,113 @@
-<!DOCTYPE html>
+      <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bayu Minecraft</title>
+  <meta charset="UTF-8">
+  <title>Bayu Addons</title>
   <style>
     body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #121212;
-      color: white;
+      background-color: #006666;
+      color: #000;
+      font-family: sans-serif;
       text-align: center;
-    }
-    .container {
-      padding: 30px 15px;
+      margin: 0;
+      padding: 0;
     }
     .profile-img {
       width: 120px;
       height: 120px;
       border-radius: 50%;
-      box-shadow: 0 0 20px orange;
-      margin-bottom: 10px;
+      margin: 30px auto 10px;
+      display: block;
+      background-color: orange;
+      object-fit: cover;
     }
-    h1 {
-      font-size: 36px;
-      margin: 10px 0 5px;
-    }
-    .subtitle {
-      color: #facc15;
-      font-size: 18px;
+    .tiktok-icon {
+      width: 50px;
       margin-bottom: 20px;
     }
-    .socials img {
-      width: 40px;
-      margin: 0 10px;
-      border-radius: 8px;
-    }
-    .section {
-      background: linear-gradient(135deg, #facc15, #fb923c);
-      border-radius: 15px;
-      padding: 20px;
-      margin-top: 30px;
-      box-shadow: 0 0 25px rgba(255, 204, 0, 0.4);
-    }
-    .section h2 {
-      margin: 0 0 20px;
-      font-size: 22px;
-      color: #000;
-    }
-    .grid {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      align-items: center;
-    }
-    .item {
-      background: #1e1e1e;
-      padding: 12px 24px;
+    .search-box {
+      margin: 20px auto;
+      padding: 10px;
+      font-size: 16px;
       border-radius: 10px;
+      border: none;
+      width: 80%;
+      max-width: 300px;
+    }
+    .addon-card {
+      background: linear-gradient(to bottom, #66ccff, #3399ff);
+      border-radius: 20px;
+      margin: 20px auto;
+      padding: 20px;
+      max-width: 400px;
+      color: black;
+    }
+    .addon-title {
+      font-size: 20px;
       font-weight: bold;
-      color: #fff;
+    }
+    .addon-link {
       display: inline-block;
-      transition: 0.3s;
-      text-decoration: none;
-    }
-    .item:hover {
-      background: #2a2a2a;
-    }
-    .download {
-      margin-top: 20px;
-      background: #0ea5e9;
-      color: white;
-      font-weight: bold;
-      border-radius: 8px;
+      margin: 10px 0;
       padding: 10px 16px;
-      display: inline-block;
+      background-color: #2222ff;
+      color: white;
       text-decoration: none;
+      border-radius: 12px;
+    }
+    .addon-img {
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <img src="https://i.imgur.com/1X6VZbH.png" class="profile-img" alt="Bayu Logo" />
-    <h1>BAYU</h1>
-    <div class="subtitle">FREE</div>
 
-    <div class="socials">
-      <a href="#"><img src="https://img.icons8.com/color/48/tiktok--v1.png"/></a>
+  <!-- Foto Profil -->
+  <img src="https://yourdomain.com/foto.png" class="profile-img" alt="Foto Profil">
+
+  <!-- Logo TikTok -->
+  <a href="https://tiktok.com/@yourusername" target="_blank">
+    <img src="https://img.icons8.com/color/48/tiktok--v1.png" class="tiktok-icon" alt="TikTok" />
+  </a>
+
+  <!-- Fitur Pencarian -->
+  <input type="text" id="searchInput" class="search-box" placeholder="Cari addon...">
+
+  <!-- Daftar Addon -->
+  <div id="addonList">
+
+    <!-- Addon 1 -->
+    <div class="addon-card">
+      <div class="addon-title">Villager Soldier</div>
+      <a href="https://example.com/download.mcaddon" class="addon-link" target="_blank">Download</a>
+      <img src="https://i.imgur.com/5OKK9ai.jpg" class="addon-img" alt="Villager Soldier">
     </div>
 
-    <div class="section">
-      <h2>🎮 MINECRAFT 🎮</h2>
-      <div class="grid">
-        <a class="item" href="https://example.com/maps" target="_blank">🗺️ Maps</a>
-        <a class="item" href="https://example.com/addons" target="_blank">🧩 Addons</a>
-        <a class="item" href="https://example.com/textures" target="_blank">🌅 Textures</a>
-        <a class="item" href="https://example.com/skins" target="_blank">👕 Skins</a>
-      </div>
-      <a class="download" href="#">⬇️ Download Minecraft ⬇️</a>
+    <!-- Tambahkan addon berikutnya di bawah sini -->
+    <!-- Contoh:
+    <div class="addon-card">
+      <div class="addon-title">Nama Addon</div>
+      <a href="https://..." class="addon-link" target="_blank">Download</a>
+      <img src="https://..." class="addon-img" alt="...">
     </div>
+    -->
+
   </div>
+
+  <!-- Script Filter -->
+  <script>
+    const searchInput = document.getElementById("searchInput");
+    searchInput.addEventListener("keyup", function () {
+      const filter = searchInput.value.toLowerCase();
+      const addons = document.querySelectorAll(".addon-card");
+      addons.forEach(card => {
+        const title = card.querySelector(".addon-title").textContent.toLowerCase();
+        card.style.display = title.includes(filter) ? "block" : "none";
+      });
+    });
+  </script>
+
 </body>
 </html>
