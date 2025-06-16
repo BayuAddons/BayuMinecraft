@@ -49,21 +49,20 @@
       color: #000;
     }
     .grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      display: flex;
+      flex-direction: column;
       gap: 12px;
+      align-items: center;
     }
     .item {
       background: #1e1e1e;
-      padding: 12px;
+      padding: 12px 24px;
       border-radius: 10px;
       font-weight: bold;
       color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
+      display: inline-block;
       transition: 0.3s;
+      text-decoration: none;
     }
     .item:hover {
       background: #2a2a2a;
@@ -87,22 +86,16 @@
     <div class="subtitle">FREE</div>
 
     <div class="socials">
-      <a href="#"><img src="https://img.icons8.com/color/48/youtube-play.png"/></a>
       <a href="#"><img src="https://img.icons8.com/color/48/tiktok--v1.png"/></a>
-      <a href="#"><img src="https://img.icons8.com/color/48/discord-logo.png"/></a>
     </div>
 
     <div class="section">
       <h2>🎮 MINECRAFT 🎮</h2>
       <div class="grid">
-        <div class="item">🗺️ Maps</div>
-        <div class="item">🧩 Addons</div>
-        <div class="item">✨ Shaders</div>
-        <div class="item">💻 Clients</div>
-        <div class="item">🌅 Textures</div>
-        <div class="item">👕 Skins</div>
-        <div class="item">🐉 ModPacks</div>
-        <div class="item">🛒 Marketplace</div>
+        <a class="item" href="https://example.com/maps" target="_blank">🗺️ Maps</a>
+        <a class="item" href="https://example.com/addons" target="_blank">🧩 Addons</a>
+        <a class="item" href="https://example.com/textures" target="_blank">🌅 Textures</a>
+        <a class="item" href="https://example.com/skins" target="_blank">👕 Skins</a>
       </div>
       <a class="download" href="#">⬇️ Download Minecraft ⬇️</a>
     </div>
